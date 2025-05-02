@@ -18,6 +18,12 @@
 /* site.css - overall layout, theme, and component styling */
 /* ------------------------------------------------------------------ */
 
+
+h1 {
+  color: pink;
+}
+
+
 /* 1. Base reset & full-page centering */
 html, body {
   margin: 0;    /* remove default browser margins */
