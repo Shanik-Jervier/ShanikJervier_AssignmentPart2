@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- set the character encoding so text displays correctly -->
+  <meta charset="UTF-8">
+  <!-- make the page adapt to different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Score - Quiz App</title>
+
+  <!-- load styles for quiz slides and score scale -->
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+  <header>
+    <!-- page title shown at the top -->
+    <h1>Your Quiz Score</h1>
+    <nav>
+      <!-- link back to the home page -->
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- display the numeric score out of total questions -->
+    <h2>Your Score: <span id="scoreVal"></span> / <span id="totalVal"></span></h2>
+
+    <!-- a 5-step scale from Bad to Excellent gets highlighted based on percentage -->
+    <div id="scoreScale" class="score-scale">
+      <div class="scale-item">Bad</div>
+      <div class="scale-item">Poor</div>
+      <div class="scale-item">Good</div>
+      <div class="scale-item">Very Good</div>
+      <div class="scale-item">Excellent</div>
+    </div>
+
+    <!-- optional extra space or message could go here -->
+    <p></p>
+    <!-- link to start creating a new quiz if desired -->
+    <p><a href="create-quiz.html">Create Another Quiz</a></p>
+  </main>
+
+  <!-- load shared quiz data helper functions -->
+  <script src="js/quiz.js"></script>
+
+  <script>
+    // retrieve the saved quiz data or default to empty object
+    const storedData = JSON.parse(localStorage.getItem('quizData')) || {};
+
+    // get how many answers were correct (or 0 if not set)
+    const correct = storedData.score || 0;
+    // get total number of questions (length of questions array)
+    const total = (storedData.questions || []).length;
+
+    // show the numbers inside the HTML spans
+    document.getElementById('scoreVal').textContent = correct;
+    document.getElementById('totalVal').textContent = total;
+
+    // calculate percentage score, then map to a scale bucket 0–4
+    const pct = total ? (correct / total) * 100 : 0;
+    let bucket = pct === 100
+      ? 4
+      : Math.floor(pct / 20);
+
+    // find all the scale boxes and add 'highlight' to the correct one
+    const items = document.querySelectorAll('#scoreScale .scale-item');
+    if (items[bucket]) items[bucket].classList.add('highlight');
+  </script>
+</body>
+</html>

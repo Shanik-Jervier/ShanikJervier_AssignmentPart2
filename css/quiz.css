@@ -1,0 +1,149 @@
+/* quiz.css - styles for question slides and navigation buttons */
+
+/* hide all slides by default to only show the active one */
+.question-slide {
+  display: none; /* not visible until made active */
+  border: none;  /* remove any default border */
+}
+/* show only the slide marked as active */
+.question-slide.active {
+  display: block; /* make the active slide visible */
+}
+/* spacing above the navigation buttons area */
+.nav-buttons {
+  margin-top: 1rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* site.css - overall layout, theme, and component styling */
+/* ------------------------------------------------------------------ */
+
+/* 1. Base reset & full-page centering */
+html, body {
+  margin: 0;    /* remove default browser margins */
+  padding: 0;   /* remove default browser padding */
+  height: 100%; /* make sure body fills full viewport height */
+}
+body {
+  display: flex;            /* use flexbox to center content */
+  flex-direction: column;   /* stack header, main, footer vertically */
+  justify-content: center;  /* center content vertically */
+  align-items: center;      /* center content horizontally */
+  background-color: #ffe0e6; /* light pink background for the whole page */
+  font-family: sans-serif;  /* use a clean, readable font */
+}
+
+/* restrict main content width and center it */
+.container, .page-content {
+  width: 100%;        /* fill available width */
+  max-width: 800px;   /* but don’t get wider than 800px */
+  padding: 1rem;      /* add space inside the container */
+  box-sizing: border-box; /* include padding in width calculation */
+}
+
+/* 2. Inputs, selects, textareas, buttons - consistent styling */
+input,
+select,
+textarea,
+button {
+  border: 1px solid #ffa3b1;  /* pink border to match theme */
+  border-radius: 0.5rem;      /* rounded corners */
+  padding: 0.5rem 0.75rem;    /* space inside each element */
+  font-size: 1rem;            /* readable text size */
+  outline: none;              /* remove default focus outline */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+/* change border and background color on focus to show the user’s selection */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  border-color: #ff6b80;      /* darker pink border on focus */
+  background-color: #fff0f3;  /* very light pink background */
+}
+
+/* 3. Links - remove default underline and add hover effect */
+a {
+  color: #d6336c;             /* deep pink link color */
+  text-decoration: none;      /* no underline */
+  transition: opacity 0.2s ease;
+}
+/* make links semi-transparent when hovered for feedback */
+a:hover {
+  opacity: 0.7;
+}
+
+/* 4. Answer options - styled pink boxes for multiple-choice answers */
+.answer-option {
+  display: block;              /* each option on its own line */
+  width: 100%;                 /* fill container width */
+  max-width: 400px;            /* but don’t stretch too wide */
+  margin: 0.5rem auto;         /* vertical gap and center horizontally */
+  padding: 0.75rem 1rem;       /* space inside the box */
+  background-color: #ffd1dc;   /* light pink box */
+  border: 1px solid #ffb3c1;   /* slightly darker pink border */
+  border-radius: 0.5rem;       /* rounded corners */
+  cursor: pointer;             /* show pointer on hover */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+/* darken option and lift it slightly on hover */
+.answer-option:hover {
+  background-color: #ffb3c1;   /* darker pink */
+  transform: translateY(-2px);
+}
+/* when an option is selected, make it stand out more */
+.answer-option.selected {
+  background-color: #ff8a9a;   /* darkest pink when selected */
+  border-color: #ff6b80;
+}
+
+/* 5. Fieldsets & legends - style the question groups */
+fieldset {
+  border: 1px solid #ffa3b1;   /* pink border around groups */
+  border-radius: 0.5rem;       /* rounded group container */
+  padding: 1rem;               /* space inside the group */
+  margin: 1rem 0;              /* vertical spacing between groups */
+  background-color: #fff0f3;   /* very light pink to separate from page background */
+}
+legend {
+  font-size: 1.1rem;           /* slightly larger text for the group title */
+  font-weight: bold;           /* make it stand out */
+  color: #d6336c;              /* deep pink color for legend text */
+  padding: 0 0.5rem;           /* space around the text */
+}
+
+/* 6. 5-step score scale - display rating from Bad to Excellent */
+.score-scale {
+  display: flex;                /* arrange items in a row */
+  justify-content: space-between; /* even space between items */
+  max-width: 600px;             /* don’t let it get too wide */
+  margin: 1.5rem auto;          /* vertical gap and center */
+  gap: 0.5rem;                  /* small gap between each box */
+}
+.score-scale .scale-item {
+  flex: 1;                      /* each box takes equal space */
+  text-align: center;           /* center text inside */
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #ffa3b1;
+  border-radius: 0.5rem;
+  background-color: #ffd1dc;
+  font-weight: 500;             /* medium font weight */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+/* highlight the box that matches the user’s score */
+.score-scale .scale-item.highlight {
+  background-color: #ff8a9a;    /* stand-out pink */
+  color: #fff;                  /* white text for contrast */
+}
+
+/* 7. Disclaimer styling - subtle note at the bottom of About page */
+.disclaimer {
+  font-size: 0.85rem;           /* slightly smaller text */
+  color: #6c757d;               /* muted grey to de-emphasize */
+  text-align: center;           /* center it under content */
+  margin-top: 1.5rem;           /* space above it */
+  padding-top: 0.75rem;         /* space inside before text */
+  border-top: 1px solid #ffa3b1; /* pink divider line */
+  font-style: italic;           /* italic to signal footnote */
+  line-height: 1.4;             /* make text easier to read */
+}

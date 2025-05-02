@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- set the character encoding so browsers render text correctly -->
+  <meta charset="UTF-8">
+  <!-- ensure the page scales nicely on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Quiz - Quiz App</title>
+  <!-- load the CSS that styles our quiz slides and options -->
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+  <header>
+    <!-- page title shown at the top -->
+    <h1>Create Your Quiz</h1>
+    <nav>
+      <!-- simple link back to the main page -->
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- this form wraps all of our question “slides” -->
+    <form id="quiz-form">
+
+      <!-- QUESTION SLIDE 1 -->
+      <!-- each .question-slide is one screen the user fills out -->
+      <div class="question-slide" data-index="1">
+        <!-- show which question number this is -->
+        <h2>Question 1</h2>
+        <!-- input for the question text itself -->
+        <label for="question1">Question:</label>
+        <input type="text" id="question1" name="question1"><br><br>
+
+        <!-- group the answer options together -->
+        <fieldset>
+          <legend>Answer Options</legend>
+          <!-- there are 4 text inputs for possible answers -->
+          <!-- next to each, a radio button marks the correct one -->
+          <label for="option1_1">Option 1:</label>
+          <input type="text" id="option1_1" name="option1_1">
+          <input type="radio" name="correct1" value="1"> Correct<br><br>
+
+          <label for="option1_2">Option 2:</label>
+          <input type="text" id="option1_2" name="option1_2">
+          <input type="radio" name="correct1" value="2"> Correct<br><br>
+
+          <label for="option1_3">Option 3:</label>
+          <input type="text" id="option1_3" name="option1_3">
+          <input type="radio" name="correct1" value="3"> Correct<br><br>
+
+          <label for="option1_4">Option 4:</label>
+          <input type="text" id="option1_4" name="option1_4">
+          <input type="radio" name="correct1" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- QUESTION SLIDE 2 -->
+      <!-- same structure as slide 1, just for Question 2 -->
+      <div class="question-slide" data-index="2">
+        <h2>Question 2</h2>
+        <label for="question2">Question:</label>
+        <input type="text" id="question2" name="question2"><br><br>
+        <fieldset>
+          <legend>Answer Options</legend>
+          <!-- four text inputs + radio buttons for correct answer -->
+          <label for="option2_1">Option 1:</label>
+          <input type="text" id="option2_1" name="option2_1">
+          <input type="radio" name="correct2" value="1"> Correct<br><br>
+
+          <label for="option2_2">Option 2:</label>
+          <input type="text" id="option2_2" name="option2_2">
+          <input type="radio" name="correct2" value="2"> Correct<br><br>
+
+          <label for="option2_3">Option 3:</label>
+          <input type="text" id="option2_3" name="option2_3">
+          <input type="radio" name="correct2" value="3"> Correct<br><br>
+
+          <label for="option2_4">Option 4:</label>
+          <input type="text" id="option2_4" name="option2_4">
+          <input type="radio" name="correct2" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- QUESTION SLIDE 3 -->
+      <!-- repeat for question 3 -->
+      <div class="question-slide" data-index="3">
+        <h2>Question 3</h2>
+        <label for="question3">Question:</label>
+        <input type="text" id="question3" name="question3"><br><br>
+        <fieldset>
+          <legend>Answer Options</legend>
+          <label for="option3_1">Option 1:</label>
+          <input type="text" id="option3_1" name="option3_1">
+          <input type="radio" name="correct3" value="1"> Correct<br><br>
+
+          <label for="option3_2">Option 2:</label>
+          <input type="text" id="option3_2" name="option3_2">
+          <input type="radio" name="correct3" value="2"> Correct<br><br>
+
+          <label for="option3_3">Option 3:</label>
+          <input type="text" id="option3_3" name="option3_3">
+          <input type="radio" name="correct3" value="3"> Correct<br><br>
+
+          <label for="option3_4">Option 4:</label>
+          <input type="text" id="option3_4" name="option3_4">
+          <input type="radio" name="correct3" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- QUESTION SLIDE 4 -->
+      <div class="question-slide" data-index="4">
+        <h2>Question 4</h2>
+        <label for="question4">Question:</label>
+        <input type="text" id="question4" name="question4"><br><br>
+        <fieldset>
+          <legend>Answer Options</legend>
+          <label for="option4_1">Option 1:</label>
+          <input type="text" id="option4_1" name="option4_1">
+          <input type="radio" name="correct4" value="1"> Correct<br><br>
+
+          <label for="option4_2">Option 2:</label>
+          <input type="text" id="option4_2" name="option4_2">
+          <input type="radio" name="correct4" value="2"> Correct<br><br>
+
+          <label for="option4_3">Option 3:</label>
+          <input type="text" id="option4_3" name="option4_3">
+          <input type="radio" name="correct4" value="3"> Correct<br><br>
+
+          <label for="option4_4">Option 4:</label>
+          <input type="text" id="option4_4" name="option4_4">
+          <input type="radio" name="correct4" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- QUESTION SLIDE 5 -->
+      <div class="question-slide" data-index="5">
+        <h2>Question 5</h2>
+        <label for="question5">Question:</label>
+        <input type="text" id="question5" name="question5"><br><br>
+        <fieldset>
+          <legend>Answer Options</legend>
+          <label for="option5_1">Option 1:</label>
+          <input type="text" id="option5_1" name="option5_1">
+          <input type="radio" name="correct5" value="1"> Correct<br><br>
+
+          <label for="option5_2">Option 2:</label>
+          <input type="text" id="option5_2" name="option5_2">
+          <input type="radio" name="correct5" value="2"> Correct<br><br>
+
+          <label for="option5_3">Option 3:</label>
+          <input type="text" id="option5_3" name="option5_3">
+          <input type="radio" name="correct5" value="3"> Correct<br><br>
+
+          <label for="option5_4">Option 4:</label>
+          <input type="text" id="option5_4" name="option5_4">
+          <input type="radio" name="correct5" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- QUESTION SLIDE 6 -->
+      <div class="question-slide" data-index="6">
+        <h2>Question 6</h2>
+        <label for="question6">Question:</label>
+        <input type="text" id="question6" name="question6"><br><br>
+        <fieldset>
+          <legend>Answer Options</legend>
+          <label for="option6_1">Option 1:</label>
+          <input type="text" id="option6_1" name="option6_1">
+          <input type="radio" name="correct6" value="1"> Correct<br><br>
+
+          <label for="option6_2">Option 2:</label>
+          <input type="text" id="option6_2" name="option6_2">
+          <input type="radio" name="correct6" value="2"> Correct<br><br>
+
+          <label for="option6_3">Option 3:</label>
+          <input type="text" id="option6_3" name="option6_3">
+          <input type="radio" name="correct6" value="3"> Correct<br><br>
+
+          <label for="option6_4">Option 4:</label>
+          <input type="text" id="option6_4" name="option6_4">
+          <input type="radio" name="correct6" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- QUESTION SLIDE 7 -->
+      <div class="question-slide" data-index="7">
+        <h2>Question 7</h2>
+        <label for="question7">Question:</label>
+        <input type="text" id="question7" name="question7"><br><br>
+        <fieldset>
+          <legend>Answer Options</legend>
+          <label for="option7_1">Option 1:</label>
+          <input type="text" id="option7_1" name="option7_1">
+          <input type="radio" name="correct7" value="1"> Correct<br><br>
+
+          <label for="option7_2">Option 2:</label>
+          <input type="text" id="option7_2" name="option7_2">
+          <input type="radio" name="correct7" value="2"> Correct<br><br>
+
+          <label for="option7_3">Option 3:</label>
+          <input type="text" id="option7_3" name="option7_3">
+          <input type="radio" name="correct7" value="3"> Correct<br><br>
+
+          <label for="option7_4">Option 4:</label>
+          <input type="text" id="option7_4" name="option7_4">
+          <input type="radio" name="correct7" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- QUESTION SLIDE 8 -->
+      <div class="question-slide" data-index="8">
+        <h2>Question 8</h2>
+        <label for="question8">Question:</label>
+        <input type="text" id="question8" name="question8"><br><br>
+        <fieldset>
+          <legend>Answer Options</legend>
+          <label for="option8_1">Option 1:</label>
+          <input type="text" id="option8_1" name="option8_1">
+          <input type="radio" name="correct8" value="1"> Correct<br><br>
+
+          <label for="option8_2">Option 2:</label>
+          <input type="text" id="option8_2" name="option8_2">
+          <input type="radio" name="correct8" value="2"> Correct<br><br>
+
+          <label for="option8_3">Option 3:</label>
+          <input type="text" id="option8_3" name="option8_3">
+          <input type="radio" name="correct8" value="3"> Correct<br><br>
+
+          <label for="option8_4">Option 4:</label>
+          <input type="text" id="option8_4" name="option8_4">
+          <input type="radio" name="correct8" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- QUESTION SLIDE 9 -->
+      <div class="question-slide" data-index="9">
+        <h2>Question 9</h2>
+        <label for="question9">Question:</label>
+        <input type="text" id="question9" name="question9"><br><br>
+        <fieldset>
+          <legend>Answer Options</legend>
+          <label for="option9_1">Option 1:</label>
+          <input type="text" id="option9_1" name="option9_1">
+          <input type="radio" name="correct9" value="1"> Correct<br><br>
+
+          <label for="option9_2">Option 2:</label>
+          <input type="text" id="option9_2" name="option9_2">
+          <input type="radio" name="correct9" value="2"> Correct<br><br>
+
+          <label for="option9_3">Option 3:</label>
+          <input type="text" id="option9_3" name="option9_3">
+          <input type="radio" name="correct9" value="3"> Correct<br><br>
+
+          <label for="option9_4">Option 4:</label>
+          <input type="text" id="option9_4" name="option9_4">
+          <input type="radio" name="correct9" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- QUESTION SLIDE 10 -->
+      <div class="question-slide" data-index="10">
+        <h2>Question 10</h2>
+        <label for="question10">Question:</label>
+        <input type="text" id="question10" name="question10"><br><br>
+        <fieldset>
+          <legend>Answer Options</legend>
+          <label for="option10_1">Option 1:</label>
+          <input type="text" id="option10_1" name="option10_1">
+          <input type="radio" name="correct10" value="1"> Correct<br><br>
+
+          <label for="option10_2">Option 2:</label>
+          <input type="text" id="option10_2" name="option10_2">
+          <input type="radio" name="correct10" value="2"> Correct<br><br>
+
+          <label for="option10_3">Option 3:</label>
+          <input type="text" id="option10_3" name="option10_3">
+          <input type="radio" name="correct10" value="3"> Correct<br><br>
+
+          <label for="option10_4">Option 4:</label>
+          <input type="text" id="option10_4" name="option10_4">
+          <input type="radio" name="correct10" value="4"> Correct<br><br>
+        </fieldset>
+      </div>
+
+      <!-- NAVIGATION BUTTONS -->
+      <!-- lets user move to the previous or next slide -->
+      <div class="nav-buttons">
+        <button type="button" id="prev-btn">Prev</button>
+        <button type="button" id="next-btn">Next</button>
+      </div>
+    </form>
+
+    <!-- placeholder that will show the share link once quiz is created -->
+    <div id="share-placeholder">
+      <!-- share link placeholder -->
+    </div>
+  </main>
+
+  <!-- bring in our shared quiz data logic -->
+  <script src="js/quiz.js"></script>
+  <!-- script that handles creating quiz slides and saving data -->
+  <script src="js/create-quiz.js"></script>
+</body>
+</html>

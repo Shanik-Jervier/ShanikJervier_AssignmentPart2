@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- specify character encoding so text displays correctly -->
+  <meta charset="UTF-8">
+  <!-- ensure the page works in older versions of Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- make the layout adapt to different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page - Quiz App</title>
+
+  <!-- load the CSS that gives us our slide styles -->
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+  <header>
+    <!-- main title at the top of every page -->
+    <h1>Welcome to the Quiz App</h1>
+    <nav>
+      <!-- links to learn more or get in touch -->
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- prompt the user to enter their name before they start -->
+    <h2>Enter Your Name to Begin</h2>
+    <form method="post" action="create-quiz.html">
+      <!-- text box for typing your name; 'required' makes sure it isn't empty -->
+      <input type="text" name="username" placeholder="Enter your name" required>
+      <!-- button to submit your name and move on to creating the quiz -->
+      <button type="submit">Start Quiz Creation</button>
+    </form>
+  </main>
+
+  <!-- bring in our shared quiz data functions -->
+  <script src="js/quiz.js"></script>
+  <script>
+    // when the form is submitted, run this code instead of a normal page reload
+    document.querySelector('form').onsubmit = function(event) {
+      // stop the browser’s default submit behavior
+      event.preventDefault();
+
+      // get the value the user typed and trim off extra spaces
+      const username = event.target.username.value.trim();
+      // if they didn’t type anything, don’t do anything
+      if (!username) return;
+
+      // store the name under quizData so other pages can use it
+      quizData.username = username;
+      // save quizData into the browser’s localStorage
+      localStorage.setItem('quizData', JSON.stringify(quizData));
+
+      // go to the page where the user builds their quiz
+      window.location.href = 'create-quiz.html';
+    };
+  </script>
+</body>
+</html>

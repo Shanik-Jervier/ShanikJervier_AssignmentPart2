@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- … -->
+  <!-- set character encoding for correct text display -->
+  <meta charset="UTF-8">
+  <!-- make layout adapt to different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Quiz - Quiz App</title>
+  <!-- Slide CSS -->
+  <!-- load slide styles (colors, layout for questions) -->
+  <link rel="stylesheet" href="css/quiz.css" />
+</head>
+<body>
+  <header>
+    <!-- header section: title and navigation -->
+    <h1>Play the Quiz</h1>
+    <nav>
+      <!-- link to go back to home screen -->
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- slide container where JS will inject each question screen -->
+    <div id="slides-container"></div>
+
+    <!-- navigation buttons for previous and next slides -->
+    <div class="nav-buttons">
+      <button id="prev-btn" type="button">Prev</button>
+      <button id="next-btn" type="button">Next</button>
+    </div>
+  </main>
+
+  <!-- include quiz.js to handle loading and saving quiz data -->
+  <script src="js/quiz.js"></script>
+  <!-- include play-quiz-slides.js to build and navigate the quiz slides -->
+  <script src="js/play-quiz-slides.js"></script>
+</body>
+</html>

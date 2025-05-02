@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- specify text encoding for correct display -->
+  <meta charset="UTF-8">
+  <!-- ensure layout adjusts to different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Answers - Quiz App</title>
+  <!-- Slide CSS -->
+  <!-- load styles for quiz slides and navigation buttons -->
+  <link rel="stylesheet" href="css/quiz.css" />
+</head>
+<body>
+  <header>
+    <!-- main page header with title and links -->
+    <h1>Review Your Answers</h1>
+    <nav>
+      <!-- link back to home and option to retake the quiz -->
+      <a href="index.html">Home</a> |
+      <a href="play-quiz.html">Play Again</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- container where JS will insert each review slide -->
+    <div id="slides-container"></div>
+
+    <!-- navigation buttons to move through answer review slides -->
+    <div class="nav-buttons">
+      <button id="prev-btn" type="button">Prev</button>
+      <button id="next-btn" type="button">Next</button>
+    </div>
+  </main>
+
+  <!-- include shared quiz logic for loading stored data -->
+  <script src="js/quiz.js"></script>
+  <!-- include script that builds and navigates the answer review slides -->
+  <script src="js/answer-slides.js"></script>
+</body>
+</html>
